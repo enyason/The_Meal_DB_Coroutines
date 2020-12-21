@@ -1,6 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.21"
+    ext{
+        kotlin_version =  "1.4.21"
+        lifecycle_version = "2.2.0"
+        arch_version = "2.1.0"
+        fragment_version = "1.2.5"
+        nav_version = "2.3.2"
+        retrofit_version = "2.9.0"
+        moshi_version = "1.9.2"
+        moshi_converter_version = "2.9.2"
+        dagger_hilt_version = "2.29.1-alpha"
+    }
+
     repositories {
         google()
         jcenter()
@@ -8,7 +19,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0-alpha02"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.29.1-alpha'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
