@@ -7,9 +7,11 @@ buildscript {
         fragment_version = "1.2.5"
         nav_version = "2.3.2"
         retrofit_version = "2.9.0"
+        retrofit_http_logger_version = "4.9.0"
         moshi_version = "1.9.2"
-        moshi_converter_version = "2.9.2"
+        moshi_converter_version = "2.9.0"
         dagger_hilt_version = "2.29.1-alpha"
+        decorator_version = "1.2.0"
     }
 
     repositories {
@@ -30,6 +32,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 

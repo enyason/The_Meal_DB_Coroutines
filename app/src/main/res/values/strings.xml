@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">The Meal DB (Coroutines)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="categories_title">Categories</string>
+    <string name="meals_title">Meals</string>
+    <string name="get_catogories_error">Could not get categories</string>
+
+    //CATEGORY
+    <string name="category.category_image.content_description">Category Image</string>
 </resources>
