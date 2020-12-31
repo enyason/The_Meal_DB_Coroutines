@@ -1,4 +1,4 @@
-package com.sanmidev.themealdbcoroutines.features.meals.categories
+package com.sanmidev.themealdbcoroutines.features.categories
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel

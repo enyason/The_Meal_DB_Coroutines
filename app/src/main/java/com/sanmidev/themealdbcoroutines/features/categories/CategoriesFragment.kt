@@ -1,27 +1,24 @@
-package com.sanmidev.themealdbcoroutines.features.meals.categories
+package com.sanmidev.themealdbcoroutines.features.categories
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.whenCreated
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sanmidev.themealdbcoroutines.R
 import com.sanmidev.themealdbcoroutines.data.model.CategoryModel
 import com.sanmidev.themealdbcoroutines.databinding.FragmentCategoriesBinding
+import com.sanmidev.themealdbcoroutines.features.meals.MealFragment
 import com.sanmidev.themealdbcoroutines.utils.NetworkState
 import com.sanmidev.themealdbcoroutines.utils.dpToPx
 import dagger.hilt.android.AndroidEntryPoint
 import io.cabriole.decorator.ColumnProvider
 import io.cabriole.decorator.GridMarginDecoration
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 
 private const val MARGIN_SIZE = 8
@@ -35,6 +32,8 @@ class CategoriesFragment : Fragment() {
     private val binding : FragmentCategoriesBinding get() = _binding!!
 
     private var categoryAdapter: CategoryAdapter? = null
+
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -77,7 +76,9 @@ class CategoriesFragment : Fragment() {
 
     private fun setupRecyclerView() {
         categoryAdapter = CategoryAdapter { categoryModel: CategoryModel ->
+            val directions = CategoriesFragmentDirections.actionCategoriesFragmentToMealFragment2(categoryModel.id)
 
+            navController.navigate(directions)
         }
 
         binding.rvCategory.apply {

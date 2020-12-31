@@ -1,4 +1,4 @@
-package com.sanmidev.themealdbcoroutines.features.meals.categories
+package com.sanmidev.themealdbcoroutines.features.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,6 @@ import com.sanmidev.themealdbcoroutines.data.model.CategoryModel
 import com.sanmidev.themealdbcoroutines.data.model.CategoryModelDiff
 import com.sanmidev.themealdbcoroutines.databinding.CategoryListItemBinding
 import com.sanmidev.themealdbcoroutines.utils.CoilImageLoader
-import com.sanmidev.themealdbcoroutines.utils.ImageLoader
 
 typealias OnCategoryClick = (CategoryModel) -> Unit
 
