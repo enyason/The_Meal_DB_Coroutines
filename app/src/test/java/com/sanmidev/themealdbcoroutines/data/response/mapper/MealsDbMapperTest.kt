@@ -6,6 +6,7 @@ import com.appmattus.kotlinfixture.kotlinFixture
 import com.google.common.truth.Truth
 import com.sanmidev.themealdbcoroutines.data.response.categories.CategoriesResponse
 import com.sanmidev.themealdbcoroutines.data.response.categories.CategoryResponse
+import com.sanmidev.themealdbcoroutines.data.response.meal.MealResponse
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -35,5 +36,19 @@ class MealsDbMapperTest {
         Truth.assertThat(categoryResponse.strCategoryDescription).isEqualTo(categoryModel.description)
         Truth.assertThat(categoryResponse.strCategoryThumb).isEqualTo(categoryModel.imageUrl)
 
+    }
+
+    @Test
+    fun mapMealResponseToModel() {
+        //GIVEN
+        val mealResponse = fixture<MealResponse>()
+
+        //WHEN
+        val mealModel = SUT.mapMealResponseToModel(mealResponse)
+
+        //THEN
+        Truth.assertThat(mealResponse.idMeal).isEqualTo(mealModel.id)
+        Truth.assertThat(mealResponse.strMeal).isEqualTo(mealModel.name)
+        Truth.assertThat(mealResponse.strMealThumb).isEqualTo(mealModel.imageUrl)
     }
 }

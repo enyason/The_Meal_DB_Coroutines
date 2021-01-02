@@ -1,4 +1,4 @@
-package com.sanmidev.themealdbcoroutines.data.model
+package com.sanmidev.themealdbcoroutines.data.model.category
 
 import androidx.recyclerview.widget.DiffUtil
 

@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sanmidev.themealdbcoroutines.R
-import com.sanmidev.themealdbcoroutines.data.model.CategoryModel
+import com.sanmidev.themealdbcoroutines.data.model.category.CategoryModel
 import com.sanmidev.themealdbcoroutines.databinding.FragmentCategoriesBinding
-import com.sanmidev.themealdbcoroutines.features.meals.MealFragment
+import com.sanmidev.themealdbcoroutines.features.meal.MealsFragmentArgs
 import com.sanmidev.themealdbcoroutines.utils.NetworkState
 import com.sanmidev.themealdbcoroutines.utils.dpToPx
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,12 +29,15 @@ class CategoriesFragment : Fragment() {
 
     private val viewModel by viewModels<CategoriesViewModel>()
 
+
     private var _binding :  FragmentCategoriesBinding? = null
     private val binding : FragmentCategoriesBinding get() = _binding!!
 
     private var categoryAdapter: CategoryAdapter? = null
 
     private val navController by lazy { findNavController() }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,7 +80,7 @@ class CategoriesFragment : Fragment() {
 
     private fun setupRecyclerView() {
         categoryAdapter = CategoryAdapter { categoryModel: CategoryModel ->
-            val directions = CategoriesFragmentDirections.actionCategoriesFragmentToMealFragment2(categoryModel.id)
+            val directions = CategoriesFragmentDirections.actionCategoriesFragmentToMealsFragment(categoryModel.category)
 
             navController.navigate(directions)
         }

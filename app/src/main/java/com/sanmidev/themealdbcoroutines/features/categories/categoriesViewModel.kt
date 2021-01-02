@@ -4,7 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sanmidev.themealdbcoroutines.R
-import com.sanmidev.themealdbcoroutines.data.model.CategoryModel
+import com.sanmidev.themealdbcoroutines.data.model.category.CategoryModel
 import com.sanmidev.themealdbcoroutines.data.repo.MealsRepository
 import com.sanmidev.themealdbcoroutines.utils.NetworkState
 import com.sanmidev.themealdbcoroutines.utils.runOnMain
@@ -41,5 +41,7 @@ class CategoriesViewModel @ViewModelInject constructor(private val mealsReposito
                 }
             }
         }
+
+
     }
 }

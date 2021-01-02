@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.sanmidev.themealdbcoroutines.data.model.CategoryModel
-import com.sanmidev.themealdbcoroutines.data.model.CategoryModelDiff
+import com.sanmidev.themealdbcoroutines.data.model.category.CategoryModel
+import com.sanmidev.themealdbcoroutines.data.model.category.CategoryModelDiff
 import com.sanmidev.themealdbcoroutines.databinding.CategoryListItemBinding
 import com.sanmidev.themealdbcoroutines.utils.CoilImageLoader
 

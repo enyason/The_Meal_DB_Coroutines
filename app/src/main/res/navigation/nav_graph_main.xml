@@ -11,16 +11,16 @@
         android:label="@string/categories_title"
         tools:layout="@layout/fragment_categories" >
         <action
-            android:id="@+id/action_categoriesFragment_to_mealFragment2"
-            app:destination="@id/mealFragment" />
+            android:id="@+id/action_categoriesFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mealFragment"
-        android:name="com.sanmidev.themealdbcoroutines.features.meals.MealFragment"
-        android:label="@string/meals_title"
-        tools:layout="@layout/fragment_meal" >
+        android:id="@+id/mealsFragment"
+        android:name="com.sanmidev.themealdbcoroutines.features.meal.MealsFragment"
+        android:label="meals_fragment"
+        tools:layout="@layout/meals_fragment" >
         <argument
-            android:name="mealId"
+            android:name="mealName"
             app:argType="string" />
     </fragment>
 </navigation>
